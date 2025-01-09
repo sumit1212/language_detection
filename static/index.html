@@ -8,12 +8,42 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
             color: #333;
+        }
+        .language-list {
+            background: #f4f4f4;
+            width: 20%;
+            padding: 1.5rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .language-list h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4facfe;
+        }
+        .language-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .language-list ul li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
             background: linear-gradient(to right, #4facfe, #00f2fe);
             color: white;
             text-align: center;
+            width: 100%;
             padding: 2rem 1rem;
         }
         header h1 {
@@ -68,32 +98,13 @@
             font-size: 1.2rem;
             color: green; /* Set text color for the response */
         }
-        .features {
-            background: #f9f9f9;
-            padding: 2rem;
-            text-align: center;
-        }
-        .features h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        .features div {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .features div div {
-            max-width: 200px;
-            margin: 1rem;
-            text-align: center;
-        }
         footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
+            width: 100%;
         }
         footer a {
             color: #00c6ff;
@@ -103,44 +114,47 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover the Language Behind Every Word!</h1>
-        <p>Empowering seamless global communication with AI-driven language detection.</p>
-    </header>
-    <section class="hero">
-        <h2>Breaking Language Barriers, One Word at a Time</h2>
-        <p>Paste your text below and let our tool detect the language for you!</p>
-    </section>
-    <section class="demo">
-        <input type="text" id="textInput" placeholder="Enter your text here...">
-        <button onclick="detectLanguage()">Detect Language</button>
-        <div class="results" id="results"></div>
-    </section>
-    <section class="features">
-        <h3>Why Choose Us?</h3>
-        <div>
-            <div>
-                <h4>Accurate Detection</h4>
-                <p>Powered by advanced AI algorithms.</p>
-            </div>
-            <div>
-                <h4>Fast Processing</h4>
-                <p>Get results in seconds, no matter the input size.</p>
-            </div>
-            <div>
-                <h4>Multilingual Support</h4>
-                <p>Recognizes dozens of languages across the globe.</p>
-            </div>
-            <div>
-                <h4>Developer-Friendly</h4>
-                <p>Easy integration with our API for seamless usage.</p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2025 Language Detection Tool. All rights reserved.</p>
-        <a href="#">API Documentation</a> | <a href="#">Contact Us</a> | <a href="#">Privacy Policy</a>
-    </footer>
+    <aside class="language-list">
+        <h3>Supported Languages</h3>
+        <ul>
+            <li>Arabic</li>
+            <li>Danish</li>
+            <li>Dutch</li>
+            <li>English</li>
+            <li>French</li>
+            <li>German</li>
+            <li>Greek</li>
+            <li>Hindi</li>
+            <li>Italian</li>
+            <li>Kannada</li>
+            <li>Malayalam</li>
+            <li>Portugeese</li>
+            <li>Russian</li>
+            <li>Spanish</li>
+            <li>Sweedish</li>
+            <li>Tamil</li>
+            <li>Turkish</li>
+        </ul>
+    </aside>
+    <div class="main-content">
+        <header>
+            <h1>Discover the Language Behind Every Word!</h1>
+            <p>Empowering seamless global communication with AI-driven language detection.</p>
+        </header>
+        <section class="hero">
+            <h2>Breaking Language Barriers, One Word at a Time</h2>
+            <p>Paste your text below and let our tool detect the language for you!</p>
+        </section>
+        <section class="demo">
+            <input type="text" id="textInput" placeholder="Enter your text here...">
+            <button onclick="detectLanguage()">Detect Language</button>
+            <div class="results" id="results"></div>
+        </section>
+        <footer>
+            <p>&copy; 2025 Language Detection Tool. All rights reserved.</p>
+            <a href="#">API Documentation</a> | <a href="#">Contact Us</a> | <a href="#">Privacy Policy</a>
+        </footer>
+    </div>
     <script>
         function detectLanguage() {
             const text = document.getElementById("textInput").value;
